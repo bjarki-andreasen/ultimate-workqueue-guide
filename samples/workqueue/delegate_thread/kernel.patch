@@ -1,0 +1,13 @@
+diff --git a/include/zephyr/kernel.h b/include/zephyr/kernel.h
+index d579b241867..f3bd4faae3f 100644
+--- a/include/zephyr/kernel.h
++++ b/include/zephyr/kernel.h
+@@ -767,7 +767,7 @@ struct _static_thread_data {
+ #define K_THREAD_DEFINE(name, stack_size,                                \
+ 			entry, p1, p2, p3,                               \
+ 			prio, options, delay)                            \
+-	K_THREAD_STACK_DEFINE(_k_thread_stack_##name, stack_size);	 \
++	K_THREAD_STACK_DEFINE(_CONCAT(_k_thread_stack_, name), stack_size);	 \
+ 	Z_THREAD_COMMON_DEFINE(name, stack_size, entry, p1, p2, p3,	 \
+ 			       prio, options, delay)
+ 
