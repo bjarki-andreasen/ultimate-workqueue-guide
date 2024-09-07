@@ -59,7 +59,7 @@ int sys_asyncio_work_schedule(struct sys_asyncio_work *work, k_timeout_t timeout
 	return ret;
 }
 
-void sys_asyncio_start(struct sys_asyncio_ctx *ctx)
+void sys_asyncio_run(struct sys_asyncio_ctx *ctx)
 {
 	K_SPINLOCK(&ctx->spinlock) {
 		ctx->running = true;

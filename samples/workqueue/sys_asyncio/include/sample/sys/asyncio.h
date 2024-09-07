@@ -4,6 +4,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/**
+ * System asyncio is an asynchronous framework based on the system workqueue.
+ *
+ * The framework consists of work items bundled together into independent
+ * contexts.
+ *
+ * The framework provides:
+ *   - Threadsafe sharing of data between the work items and the context
+ *     they belong to.
+ *   - Threadsafe submission of work to each individual context.
+ *   - Threadsafe starting and stopping of every individual context.
+ */
+
 #ifndef SAMPLE_SYS_ASYNCIO_H_
 #define SAMPLE_SYS_ASYNCIO_H_
 
@@ -42,7 +55,7 @@ int sys_asyncio_work_reserve(struct sys_asyncio_work *work, k_timeout_t timeout)
 int sys_asyncio_work_schedule(struct sys_asyncio_work *work, k_timeout_t timeout);
 
 /** Allow work to be scheduled */
-void sys_asyncio_start(struct sys_asyncio_ctx *ctx);
+void sys_asyncio_run(struct sys_asyncio_ctx *ctx);
 
 /** Cancel all work and prevent new work from being scheduled */
 void sys_asyncio_stop(struct sys_asyncio_ctx *ctx);

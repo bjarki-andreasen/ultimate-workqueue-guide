@@ -54,7 +54,7 @@ int main(void)
 	 * can start the asyncio context. No work is executed when we start the context. We are
 	 * simply dictating that work may now be scheduled.
 	 */
-	sys_asyncio_start(&foo_asyncio_ctx);
+	sys_asyncio_run(&foo_asyncio_ctx);
 
 	/*
 	 * Before modifying the shared member (.message) of the asyncio work item, we must reserve
@@ -119,7 +119,7 @@ int main(void)
 	/*
 	 * At this point, the context can be restarted, and work can again be scheduled.
 	 */
-	sys_asyncio_start(&foo_asyncio_ctx);
+	sys_asyncio_run(&foo_asyncio_ctx);
 
 	if (sys_asyncio_work_reserve(&foo_printable_0.work, K_NO_WAIT) < 0) {
 		printk("reserve failed\n");
