@@ -7,3 +7,4 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(sample)
 
 target_sources(app PRIVATE sample/main.c)
+target_include_directories(app PUBLIC include)
