@@ -62,9 +62,8 @@ static void foo_irq_handler(void)
 int main(void)
 {
 	/*
-	 * The process thread is configured with lower prio than the "ISR thread"
-	 * (main thread). The work can be resubmitted, and will be run once
-	 * when the work queue thread gets to run.
+	 * The process threads are configured with lower prio than the "ISR thread"
+	 * (main thread).
 	 */
 	foo_irq_handler();
 	foo_irq_handler();
