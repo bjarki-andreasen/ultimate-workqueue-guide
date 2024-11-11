@@ -1,6 +1,9 @@
 Stop creating threads
 
 Who am I
+  I maintain stuff
+  Work at Nordic
+  Have my own kennel now
 
 What is zephyr?
   Its an operating system
@@ -16,16 +19,18 @@ What's an application
     Executed in thread
 
 What's a recipe
+  One of these
   Looks like a crater on Mars
+  More importantly
 
 What's a thread
   Isolated execution context
 
 Blinky
   No macro with thread
-  Macro with thread
+  Macro with thread -> branch uwqg-thread-name
   Build for emul
-  Build for small target
+  Build for "small" target
   "There's got to be a better way!"
 
 I made a game once
@@ -33,6 +38,17 @@ I made a game once
     Start()
     Update()
   subconcious appropriation
+
+Unity MonoBehavior
+  Describe
+    Only one thread
+    Thousands of entities
+    Thread safety is trivial
+    No priority (zero time execution)
+  Example
+  Not optimizable
+    Constant tick
+    Most of the time doing nothing
 
 Blinky workqueue
   No macro with workqueue
@@ -56,7 +72,7 @@ Zephyr's main
 
 Do we need main?
   Remove main example
-    branch kernel-no-main
+    branch uwqg-no-main
   Useful for samples
   Recognizable
   Use the bg thread for something
@@ -64,8 +80,9 @@ Do we need main?
 Modules using system work queue
   design (start stop interact)
 
-branch workq_run
-branch thread-patch
+branch uwqg-no-main
+branch uwqg-workq-run
+branch uwqg-thread-name
 
 * synchronization not required for work queue
 * user space (use multiple work queues)
