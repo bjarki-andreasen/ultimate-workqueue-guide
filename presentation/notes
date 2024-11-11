@@ -1,0 +1,77 @@
+Stop creating threads
+
+Who am I
+
+What is zephyr?
+  Its an operating system
+
+What's an operating system
+  (joke) Its something like zephyr
+  Is an application
+  Runs applications
+
+What's an application
+  A recipe telling a CPU what to do
+    Single entry point
+    Executed in thread
+
+What's a recipe
+  Looks like a crater on Mars
+
+What's a thread
+  Isolated execution context
+
+Blinky
+  No macro with thread
+  Macro with thread
+  Build for emul
+  Build for small target
+  "There's got to be a better way!"
+
+I made a game once
+  Unity
+    Start()
+    Update()
+  subconcious appropriation
+
+Blinky workqueue
+  No macro with workqueue
+  Macro with workqueue
+  Build for emul
+  Build for small target
+
+Blinky with work queue
+  No macro
+  Macro
+  Comment on size
+
+What's up with main?
+  Are we building an application?
+
+Main main main
+  Example
+
+Zephyr's main
+  Example
+
+Do we need main?
+  Remove main example
+    branch kernel-no-main
+  Useful for samples
+  Recognizable
+  Use the bg thread for something
+
+Modules using system work queue
+  design (start stop interact)
+
+branch workq_run
+branch thread-patch
+
+* synchronization not required for work queue
+* user space (use multiple work queues)
+* LED manager
+* Huge notes joke (I memorized everything)
+* compare work queue with cooperative threads, realize they are identical.
+* lets remove "main", have the thread be the system thread, first init, then workqueue
+* how to deal with work at init
+* "sharing is caring", obviously true because it rhymes, like "new year, new me"
